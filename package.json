@@ -1,0 +1,41 @@
+{
+  "name": "videosubscriber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsup src/index/ts --watch --onSuccess \"node dist/index.js\"",
+    "lint": "prettier --write ./src",
+    "generate": "prisma generate",
+    "deploy": "node dist/deploy-commands.js",
+    "undeploy": "node dist/remove-commands.js",
+    "build": "tsup",
+    "start": "node --enable-source-maps ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "@prisma/client": "^3.11.0",
+    "discord-api-types": "^0.29.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "fastify": "^3.27.4",
+    "pubsubhubbub": "^1.0.1",
+    "signale": "^1.4.0",
+    "ts-node": "^10.7.0"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.160",
+    "@types/lodash": "^4.14.180",
+    "@types/node": "^17.0.23",
+    "@types/signale": "^1.4.4",
+    "prettier": "^2.6.0",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "prisma": "^3.11.0",
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.2"
+  }
+}
