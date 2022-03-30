@@ -1,7 +1,7 @@
 import { Guild } from "discord.js";
-import Event from "../classes/event";
-import { db } from "../lib/db";
-import { logger } from "../lib/logger";
+import Event from "../classes/event.js";
+import { db } from "../lib/db.js";
+import { logger } from "../lib/logger.js";
 
 export const guildDelete = new Event("guildDelete")
   .setOnce(false)

@@ -3,7 +3,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output = "../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -11,17 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model SubscribedChannel {
-  id               String   @id @unique
-  discordChannelId String   @unique
-  guildId          String   @unique
-  guild            Guild @relation(fields: [guildId], references: [id])
-  threadEnabled Boolean @default(false)
-}
-
 model Guild {
   id                 String                  @id @unique
-  subscribedChannels SubscribedChannel[]
-  ownerId            String                  @unique
-  enabled Boolean @default(value: true)
+  ownerId            String
 }

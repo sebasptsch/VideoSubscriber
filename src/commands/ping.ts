@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
-import DiscordCommand from "../classes/command";
+import DiscordCommand from "../classes/command.js";
 
 export const ping = new DiscordCommand()
   .setCommandData(

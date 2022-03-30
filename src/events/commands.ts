@@ -1,7 +1,7 @@
 import { CacheType, Interaction } from "discord.js";
-import Event from "../classes/event";
-import * as commands from "../commands";
-import { logger } from "../lib/logger";
+import Event from "../classes/event.js";
+import * as commands from "../commands/index.js";
+import { logger } from "../lib/logger.js";
 
 export const command = new Event("interactionCreate")
   .setOnce(false)

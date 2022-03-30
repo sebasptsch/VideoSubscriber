@@ -1,11 +1,11 @@
 import { Guild } from "discord.js";
-import Event from "../classes/event";
-import { db } from "../lib/db";
-import { logger } from "../lib/logger";
+import Event from "../classes/event.js";
+import { db } from "../lib/db.js";
+import { logger } from "../lib/logger.js";
 
 export const guildCreate = new Event("guildCreate")
   .setOnce(false)
-  .setResponse(async ({ id, ownerId, name }: Guild) => {
+  .setResponse(async ({ id, ownerId, name }, guild: Guild) => {
     db.guild
       .create({
         data: {

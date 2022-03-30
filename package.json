@@ -2,16 +2,17 @@
   "name": "videosubscriber",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.mjs",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsup src/index/ts --watch --onSuccess \"node dist/index.js\"",
+    "dev": "tsup src/index.ts --watch --onSuccess \"node --enable-source-maps dist/index.js\"",
     "lint": "prettier --write ./src",
     "generate": "prisma generate",
     "deploy": "node dist/deploy-commands.js",
     "undeploy": "node dist/remove-commands.js",
-    "build": "tsup",
-    "start": "node --enable-source-maps ."
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "author": "",
   "license": "ISC",
